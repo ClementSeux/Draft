@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Tarot</title>
+</head>
+<body>
+	<script> </script> 
+	<div id="barre-outils">
+			<button id="bouton-tarots"><a href="index.html?1">Tarots</a></button>
+			<button id="bouton-BoMT"><a href="index.html?2">Book of Many Things</a></button>
+	</div>
+
+	<div id="accueil">
+		
+		<h1>Choose Wisely</h1>
+		
+		<div id="game-board" class="game-board">
+
+			<div class="container" id="card-container-1">
+	  			<div class="card" id="testing-one" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte1" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-2">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte2" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-3">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte3" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-4">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte4" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-5">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte5" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-6">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte6" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-7">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte7" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-8">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte8" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-9">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte9" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-10">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte10" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-11">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte11" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-12">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte12" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-13">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte13" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-14">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte14" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-15">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte15" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-16">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte16" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-17">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte17" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-18">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte18" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-19">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte19" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-20">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte20" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-21">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte21" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-22">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte22" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-23">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte23" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-24">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte24" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-25">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte25" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-26">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte26" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-27">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte27" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-28">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte28" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-29">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte29" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-30">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte30" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-31">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte31" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-32">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte32" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-33">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte33" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-34">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte34" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-35">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte35" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-36">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte36" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-37">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte37" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-38">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte38" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-39">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte39" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-40">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte40" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-41">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte41" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-42">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte42" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-43">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte43" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-44">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte44" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-45">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte45" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-46">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte46" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-47">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte47" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-48">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte48" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-49">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte49" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-50">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte50" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-51">
+	  			<div class="card" id="testing-one" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte51" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-52">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte52" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-53">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte53" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-54">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte54" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-55">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte55" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-56">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte56" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-57">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte57" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-58">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte58" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-59">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte59" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-60">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte60" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-61">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte61" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-62">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte62" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-63">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte63" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-64">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte64" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-65">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte65" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-66">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte66" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-67">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte67" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-68">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte68" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-69">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte69" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-70">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte70" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-71">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte71" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-72">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte72" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-73">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte73" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-74">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte74" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-75">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte75" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-76">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte76" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-77">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte77" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="container" id="card-container-78">
+	  			<div class="card" onclick="flip(event)">
+	    			<div class="front">
+	     			</div>
+	    			<div id="carte78" class="back">
+	    			</div>
+	  			</div>
+			</div>
+
+			
+
+
+
+
+
+		</div>
+				
+	</div>
+	
+	<script src="js/jQuery.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

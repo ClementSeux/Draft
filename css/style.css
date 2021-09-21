@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@font-face {
+  font-family:  "Cormorant";
+  src:  url(../fonts/CormorantUnicase-Regular.ttf) format("truetype");
+  font-stretch: wider;
+}
+@font-face {
+  font-family:  "Cormorant";
+  src:  url(../fonts/CormorantUnicase-Regular.ttf) format("truetype");
+  font-stretch: wider;
+}
+:root {
+  --animation-time:  3s;
+}
+
+body {
+	background: url('../img/background.jpeg');
+  background-size: cover;
+
+	color: white;
+  margin: 20px;
+  
+}
+
+#barre-outils {
+  position: relative;
+  top: 60px;
+  right: 350px;
+  z-index: 999;
+}
+
+button {
+  margin: 10px;
+  border-radius: 4px;
+  background-color: #DDDDDDAA;
+}
+
+button:
+
+a {
+  color: #33333ACC;
+  text-decoration: none;    
+}
+
+a:link {
+  text-decoration:none;
+  color: #33333ACC;
+}
+
+a:visited { 
+  text-decoration: none; 
+  color: #33333ACC; 
+}
+
+h1 {
+  font-family: Cormorant;
+}
+
+#accueil {
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+	
+}
+
+#red-card {
+	color: red;
+}
+
+#black-card {
+	color: black;
+}
+
+.bolder {
+	font-weight: 450px;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 5px 500px 5px;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  margin: 6px;
+  width: 100px;
+  height: 160px;
+  perspective: 1000px;
+}
+
+.card {
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.front, .back {
+  position: absolute;  
+  backface-visibility: hidden;
+  background-size: 200px;
+  border-radius: 12px;
+}
+
+.front {
+    background: url("../img/1/back.jpg");
+    background-size: 100px 160px;
+    background-repeat: no-repeat;
+    transform: rotateY(0deg);
+}
+
+.front:hover {
+  bottom: 2px;
+  left: 2px;
+  box-shadow: -10px 10px 20px  #000;
+}
+
+.back {
+  background: url("../img/1/0.jpg");
+  background-size: 100px 160px;
+  transform: rotateY(180deg);
+}
+
+.back:hover {
+  bottom: 2px;
+  right: 2px;
+  box-shadow: -10px 10px 20px  #000;
+  transform: scale(2, 2);
+}
+
+.animated {
+  animation: melange var(--animation-time);
+  animation-fill-mode: backwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes melange {
+  from {
+    transform: rotateY(180deg);
+  }
+  90%{
+    transform: rotateY(10deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+
+/* a implémenter
+https://codepen.io/zebapy/pen/WvexGR
+$card-width: 13px;
+$card-gutter: 10px;
+$card-height: 20px;
+$animation-speed: 1s;
+
+body { 
+  background: tomato;
+}
+
+.shuffloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.card {
+  background: darken(tomato, 25%);
+  display: block;
+  float: left;
+  height: $card-height;
+  width: $card-width;
+  margin-left: ($card-gutter / 2);
+  margin-right: ($card-gutter / 2);
+  border-radius: 2px;
+  position: relative;
+  
+  &:nth-child(1) {
+    animation: shuffle $animation-speed infinite;
+  }
+  
+  &:nth-child(2) {
+    animation: move $animation-speed infinite;
+  }
+  
+  &:nth-child(3) {
+    animation: move $animation-speed infinite;
+  }
+ 
+}
+
+@keyframes shuffle {
+  50% {
+    opacity: .25;
+    transform: scale(.9);
+  }
+  
+  75% {
+    opacity: .25;
+    transform: scale(.9);
+    transform: translateX(($card-width + $card-gutter) * 2);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(($card-width + $card-gutter) * 2);
+  }
+}
+
+@keyframes move {
+  100% {
+    transform: translateX(-($card-width + $card-gutter));
+  }
+} */
