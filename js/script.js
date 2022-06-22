@@ -1,7 +1,7 @@
-//choisir le deck ici:
 //deck 1 = Tarots
 //deck 2 = Deck Of Many Things
 myDeck = 1;
+index_draw_card = 1;
 let turnedCard = 0;
 
 console.log("le script s'execute");
@@ -12,69 +12,114 @@ function getRandomArbitrary(min, max) {
 
 function processRequest() {
     var parameters = location.search.substring(1).split("&");
-
     var temp = parameters[0].split("=");
-
     return temp;
 }
-
-//function closePicking () {
-  //console.log('closing draft');
-  //$('.card').each(function(index) {
-    //console.log($(this).css('transform'));
-    //if($(this).css('transform') !== "rotateY(180deg)") {
-      //console.log('foo');
-      //$(this).hide();
-    //};
-  //});
-//} 
-
 
 function switchDeck(event, desiredDeck) {
   if (myDeck !== desiredDeck) {
     myDeck = desiredDeck;
     $('.card').removeClass('animated');
     location.reload();
-  }
-  
+  }  
+}
+
+function draw_in_hand_animation() {
+  draftedCard = document.getElementById('card-container-' + index_draw_card);
+  draftedCardJQ =  $('#card-container-' + index_draw_card);
+  //déclenche l'animation css de draft
+  draftedCardJQ.addClass('draft_animation');
+
+  //affecte les attributs event hover sur la carte piochée (zoom et dézoom)
+  draftedCardChild = $('#card-container-' + index_draw_card).children();
+  draftedCardChild.attr('onmouseover', "zoom(event)");
+  draftedCardChild.attr('onmouseout', "dezoom(event)");
+
+  //quand l'animation css se termine...
+  draftedCard.addEventListener('animationend', function() {
+    //réordonnancement pour conserver l'ordre de la main
+    var nbCard = $('.draft_animation').length;
+      $('#card-container-' + index_draw_card).css('order', 79 + nbCard); 
+    //paramètre largeur de la main
+    var margin = 10 + 50 / nbCard;
+    var cardWidth = 100;
+    var handWidth = nbCard * cardWidth + (nbCard - 1) * margin;
+    var angle = 90 / (nbCard + 1);
+    //boucle for-each sur les cartes tirées pour les replacer dans la main
+    $('.draft_animation').each(function() {
+      var indexHand = $( this ).css('order') - 80;
+      var posX = -(handWidth / 2) + indexHand * (cardWidth + margin) + cardWidth / 2;
+      var angleOfThis = -45 + angle * (indexHand +1);
+      console.log(angleOfThis * 0.0174533);
+      var posY =  Math.ceil(1-(Math.cos(angleOfThis * 0.0174533) * Math.cos(angleOfThis * 0.0174533) - 0.5) * 200) + 350;
+      $( this ).css('transform', 
+        'translateX(' + posX + 'px)'+ 
+        'translateY(' + posY + 'px)'+ 
+        'rotate(' + angleOfThis +'deg)'
+        );
+      $( this ).css('z-index', 800);
+    });
+  });
 }
 
 
 function flip(event) {
   console.log('flip !');
   var element = event.currentTarget;
-  const regex = new RegExp('card');
-  
-  if (regex.test(element.className)) {
+  const regex_is_a_card = new RegExp('card');
+  const regex_animation_running = new RegExp('animated');
+  if (regex_is_a_card.test(element.className) && !(regex_animation_running.test(element.className))) {
 
     //obtenir l'index de l'élément cliqué
     var children = element.childNodes;
     var lastChild = children[children.length-2];
     var index = lastChild.id;
-    index = index.slice(5, index.length);
+    index_draw_card = index.slice(5, index.length);
 
+    //remettre un carte de dos
     if(element.style.transform == "rotateY(180deg)") {
-      element.style.transform = "rotateY(0deg)";
-      $('#card-container-' + index).css('width', '100px');
-      $('#card-container-' + index).css('height', '160px');
-      $('#carte' + index).css('background-size', '100px 160px');
-      $('#carte' + index).siblings('div').css('background-size', '100px 160px');
-      --turnedCard;
+      //element.style.transform = "rotateY(0deg)";
+      //$('#card-container-' + index).css('width', '100px');
+      //$('#card-container-' + index).css('height', '160px');
+      //$('#carte' + index).css('background-size', '100px 160px');
+      //$('#carte' + index).siblings('div').css('background-size', '100px 160px');
+      //--turnedCard;
     }
-    else {
+    else { //dévoiller une nouvelle carte
       element.style.transform = "rotateY(180deg)";
-      $('#card-container-' + index).css('width', '200px');
-      $('#card-container-' + index).css('height', '300px');
-      $('#carte' + index).css('background-size', '200px 300px');
-      $('#carte' + index).siblings('div').css('background-size', '200px 300px');
-      ++turnedCard;     
+      //$('#card-container-' + index).css('width', '200px');
+      //$('#card-container-' + index).css('height', '300px');
+      //$('#carte' + index).css('background-size', '200px 300px');
+      //$('#carte' + index).siblings('div').css('background-size', '200px 300px');
+      ++turnedCard;
+      draw_in_hand_animation();
     }
   }
-
   //if (turnedCard == 3) { closePicking()};
 
 };
 
+function zoom(event) { //zoom des cartes dans la main
+  var elementParent = event.currentTarget.parentNode;
+  var index = elementParent.id;
+  index = index.slice(15, index.length);
+  $('#card-container-' + index).css('z-index', '900');
+  $('#card-container-' + index).css('width', '200px');
+  $('#card-container-' + index).css('height', '300px');
+  $('#carte' + index).css('background-size', '200px 300px');
+  $('#carte' + index).siblings('div').css('background-size', '200px 300px');
+}
+
+function dezoom(event) { //dézoom des cartes dans la main
+  var elementParent = event.currentTarget.parentNode;
+  var index = elementParent.id;
+  index = index.slice(15, index.length);
+  $('#card-container-' + index).css('z-index', '800');
+  $('#card-container-' + index).css('width', '100px');
+  $('#card-container-' + index).css('height', '160px');
+  $('#carte' + index).css('background-size', '100px 160px');
+  $('#carte' + index).siblings('div').css('background-size', '100px 160px');
+}
 
 function melanger() {
   console.log("mélange en cours");
@@ -121,15 +166,13 @@ function initialize(myDeck) {
   //déclencher l'animation
   $('.card').addClass('animated');
 
-  //event listener fin d'animation => retire la class animated, déclenche le mélange
+  //event listener fin d'animation => retirer la class animated, déclencher le mélange
   var card1 = document.getElementById("testing-one");
   card1.addEventListener('animationend', function() {
     $('.card').removeClass('animated');
     melanger();
   });
 }
-
-
 
 //main
 $(document).ready(function()
