@@ -7,14 +7,20 @@
 </head>
 <body>
 	<script> </script> 
-	<div id="barre-outils">
-			<button id="bouton-tarots"><a href="index.html?1">Tarots</a></button>
-			<button id="bouton-BoMT"><a href="index.html?2">Book of Many Things</a></button>
-	</div>
+	
 
 	<div id="accueil">
-		
-		<h1>Choose Wisely</h1>
+
+		<div class="header">
+
+			<h1>Choose Wisely</h1>
+			
+			<div id="barre-outils">
+			<button id="bouton-tarots"><a href="index.html?1">Tarots</a></button>
+			<button id="bouton-BoMT"><a href="index.html?2">Book of Many Things</a></button>
+			</div>
+			
+		</div>
 		
 		<div id="game-board" class="game-board">
 
@@ -22,7 +28,7 @@
 	  			<div class="card" id="testing-one" onclick="flip(event)">
 	    			<div class="front">
 	     			</div>
-	    			<div id="carte1" class="back">
+	    			<div id="carte1" class="back" onmouseover="zoom(event)" onmouseout="dezoom(event)">
 	    			</div>
 	  			</div>
 			</div>
@@ -719,13 +725,6 @@
 	    			</div>
 	  			</div>
 			</div>
-
-			
-
-
-
-
-
 		</div>
 				
 	</div>

@@ -11,26 +11,45 @@
 }
 :root {
   --animation-time:  3s;
+  --order-of-draft: 0;
 }
 
 body {
-	background: url('../img/background.jpeg');
+	background: url('../img/background.jpeg') no-repeat fixed;
   background-size: cover;
-
+  background-position: center;
 	color: white;
-  margin: 20px;
+  margin: 3%;
   
 }
 
+
+
+#accueil {
+  position:  relative;
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+	
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+
+
 #barre-outils {
-  position: relative;
-  top: 60px;
-  right: 350px;
+  width: 400px;
   z-index: 999;
 }
 
 button {
-  margin: 10px;
+  margin: 5px;
+  padding: 5px 8px 5px 8px;
   border-radius: 4px;
   background-color: #DDDDDDAA;
 }
@@ -54,14 +73,11 @@ a:visited {
 
 h1 {
   font-family: Cormorant;
+  padding: 2%;
+  margin: 0;
+  width: 400px;
 }
 
-#accueil {
-	display: flex;
-	flex-direction: column;	
-	align-items: center;
-	
-}
 
 #red-card {
 	color: red;
@@ -150,78 +166,42 @@ div {
   from {
     transform: rotateY(180deg);
   }
-  90%{
-    transform: rotateY(10deg);
-  }
   to {
     transform: rotateY(0deg);
   }
 }
 
-
-/* a implémenter
-https://codepen.io/zebapy/pen/WvexGR
-$card-width: 13px;
-$card-gutter: 10px;
-$card-height: 20px;
-$animation-speed: 1s;
-
-body { 
-  background: tomato;
+.draft_animation {
+  animation: draft 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.70s;
 }
 
-.shuffloader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.card {
-  background: darken(tomato, 25%);
-  display: block;
-  float: left;
-  height: $card-height;
-  width: $card-width;
-  margin-left: ($card-gutter / 2);
-  margin-right: ($card-gutter / 2);
-  border-radius: 2px;
-  position: relative;
-  
-  &:nth-child(1) {
-    animation: shuffle $animation-speed infinite;
+@keyframes draft {
+  from {
+    z-index: 900;
   }
-  
-  &:nth-child(2) {
-    animation: move $animation-speed infinite;
+  30%{
+    opacity: 0;
+    transform: translateY(90px);
   }
-  
-  &:nth-child(3) {
-    animation: move $animation-speed infinite;
-  }
- 
-}
-
-@keyframes shuffle {
-  50% {
-    opacity: .25;
-    transform: scale(.9);
-  }
-  
-  75% {
-    opacity: .25;
-    transform: scale(.9);
-    transform: translateX(($card-width + $card-gutter) * 2);
-  }
-  
-  100% {
+  55%{
+    transform: translateY(-90px);
+    z-index: 900;
+    position: fixed;
+    bottom: 300px;
     opacity: 1;
-    transform: translateX(($card-width + $card-gutter) * 2);
+  }
+  80% {
+    z-index: 900;
+    position: fixed;
+    bottom: 300px;
+    opacity: 1;
+  }
+  to {
+    z-index: 900;
+    position: fixed;
+    bottom: 300px;
+    opacity: 1;
   }
 }
-
-@keyframes move {
-  100% {
-    transform: translateX(-($card-width + $card-gutter));
-  }
-} */
